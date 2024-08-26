@@ -31,7 +31,7 @@ function login() {
 
         <div>
             <div className="flex justify-center ">
-                <img src="../src/assets/logo.jpg" className=" h-40 w-42 "></img>
+                <img src="../src/assets/logo.PNG" className=" h-36 w-42 pb-3 "></img>
             </div>
             <div className="bg-slate-400 border border-slate-600 rounded-md p-8 shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 relative">
                 <h1 className="text-4xl font-bold mb-6 text-center text-gray-800">Login</h1>
