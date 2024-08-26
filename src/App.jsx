@@ -6,7 +6,7 @@ import Dashboard from "./pages/dashboard"
 function App() {
 
   return (
-    <div className="h-[100vh] flex items-center justify-center bg-cover" style={{"backgroundImage": "url(../src/assets/imagemFundo.png)"}}>
+   
     <BrowserRouter>
       <Routes>
          <Route path="/"element={<Login />}/>
@@ -16,7 +16,6 @@ function App() {
          <Route path="/dashboard"element={<Dashboard />}/>
       </Routes>
     </BrowserRouter>
-     </div>
   )
 }
 
