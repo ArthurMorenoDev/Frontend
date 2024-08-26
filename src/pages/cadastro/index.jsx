@@ -11,18 +11,25 @@ function Cadastro(){
         event.preventDefault()
 
         try { 
-        await api.post('/cadastro', {
-            name:nameRef.current.value,
-            email:emailRef.current.value,
-            password:passwordRef.current.value
-        })
-            alert("Usuario Cadastrado Com Sucesso")
-
-            
-    }   catch(err){
-            alert("Erro ao cadastrar usuario")
-    }
-
+            // Verifica se os campos estão vazios
+            if (!nameRef.current.value || !emailRef.current.value || !passwordRef.current.value) {
+                alert("Todos os campos devem ser preenchidos");
+                return; // Impede o envio da requisição se algum campo estiver vazio
+            }
+        
+            // Se todos os campos estiverem preenchidos, envia a requisição
+            await api.post('/cadastro', {
+                name: nameRef.current.value,
+                email: emailRef.current.value,
+                password: passwordRef.current.value
+            });
+        
+            alert("Usuário cadastrado com sucesso");
+        
+        } catch (err) {
+            alert("Erro ao cadastrar usuário");
+        }
+        
     }
 
         return(

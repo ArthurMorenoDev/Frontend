@@ -1,11 +1,28 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import api from "../../services/api";
+import { useNavigate } from "react-router-dom";
+
+
+
+
 
 function ListarUsuarios() {
+    const navigate = useNavigate()
     const [allUsers, setAllUsers] = useState()
     useEffect(() => {
         async function loadUsers() {
+            
             const token = localStorage.getItem('token');
+            
+
+
+            
+            
+            if (!token){
+                alert('Você precisa estar logado para acessar essa rota!')
+                navigate("/ ")
+                return;
+            }
             const {
                 data: { users },
             } = await api.get('/listar-usuarios', {
