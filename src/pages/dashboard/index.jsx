@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function ListarUsuarios() {
+function dashboard() {
+
     const navigate = useNavigate()
     const [allUsers, setAllUsers] = useState()
     useEffect(() => {
@@ -16,16 +17,16 @@ function ListarUsuarios() {
             
 
 
-            // trava acesso a pagina
+            
             
             // if (!token){
-            //     alert('Você precisa estar logado para acessar essa rota!')
+            //     alert('Faça login para acessar essa pagina')
             //     navigate("/ ")
             //     return;
             // }
             const {
                 data: { users },
-            } = await api.get('/listar-usuarios', {
+            } = await api.get('/dashboard', {
                 headers: { Authorization: `Bearer ${token}` },
             })
 
@@ -39,7 +40,7 @@ function ListarUsuarios() {
 
     return (
         <div>
-            <h2>Listar Usuarios</h2>
+            <h2>Dashboard</h2>
             {/* <ul>
                 {allUsers.map(user => (
                     <li>
@@ -54,4 +55,4 @@ function ListarUsuarios() {
     );
 }
 
-export default ListarUsuarios;
+export default dashboard;
