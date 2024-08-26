@@ -3,9 +3,6 @@ import api from "../../services/api";
 import { useNavigate } from "react-router-dom";
 
 
-
-
-
 function ListarUsuarios() {
     const navigate = useNavigate()
     const [allUsers, setAllUsers] = useState()
@@ -14,21 +11,17 @@ function ListarUsuarios() {
             
             const token = localStorage.getItem('token');
             
-
-
             // trava acesso a pagina
-            
-            // if (!token){
-            //     alert('Você precisa estar logado para acessar essa rota!')
-            //     navigate("/ ")
-            //     return;
-            // }
+            if (!token){
+                alert('Você precisa estar logado para acessar essa rota!')
+                navigate("/ ")
+                return;
+            }
             const {
                 data: { users },
             } = await api.get('/listar-usuarios', {
                 headers: { Authorization: `Bearer ${token}` },
             })
-
 
             setAllUsers(users)
         }

@@ -4,7 +4,6 @@ import Login from "./pages/login"
 import ListarUsuarios from "./pages/lista"
 import Dashboard from "./pages/dashboard"
 function App() {
-  
 
   return (
     <div className="h-[100vh] flex items-center justify-center bg-cover" style={{"backgroundImage": "url(../src/assets/imagemFundo.png)"}}>

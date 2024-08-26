@@ -25,11 +25,9 @@ function login() {
         } catch (err) {
             alert("Senha ou Email incorretos")
         }
-
     }
 
     return (
-
 
         <div>
             <div className="flex justify-center ">
@@ -58,8 +56,6 @@ function login() {
 
         </div>
     )
-
-
 }
 
 export default login

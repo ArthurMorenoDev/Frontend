@@ -18,12 +18,14 @@ function dashboard() {
 
 
             
+            // pra travar o acesso
+
+            if (!token){
+                alert('Faça login para acessar essa pagina')
+                navigate("/ ")
+                return;
+            }
             
-            // if (!token){
-            //     alert('Faça login para acessar essa pagina')
-            //     navigate("/ ")
-            //     return;
-            // }
             const {
                 data: { users },
             } = await api.get('/dashboard', {
